@@ -3,12 +3,12 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-class UelloSend_SMS {
+class USFW_SMS {
 
     public static function send_sms($phone_number, $message) {
-        $api_url = get_option('wc_sms_api_url');
-        $api_key = get_option('wc_sms_api_key');
-        $sender_id = get_option('wc_sms_sender_id');
+        $api_url = get_option('usfw_api_url');
+        $api_key = get_option('usfw_api_key');
+        $sender_id = get_option('usfw_sender_id');
 
         // Check if the necessary settings are provided
         if (empty($api_url) || empty($api_key) || empty($phone_number)) {
@@ -20,7 +20,7 @@ class UelloSend_SMS {
             return;
         }
 
-        $prefix1 = '+233';
+        $prefix1 = '+233'; 
         $prefix2 = '233';
         $prefix3 = '0';
 
@@ -32,10 +32,10 @@ class UelloSend_SMS {
             $phone_number = $phone_number;
         }
         if(strpos($phone_number, $prefix2) === 0){
-            $phone_number = UelloSend_SMS::replaceCountryCode($phone_number,$pattern2);
+            $phone_number = USFW_SMS::replaceCountryCode($phone_number,$pattern2);
         }
         if(strpos($phone_number, $prefix1) === 0){
-            $phone_number = UelloSend_SMS::replaceCountryCode($phone_number,$pattern1);
+            $phone_number = USFW_SMS::replaceCountryCode($phone_number,$pattern1);
         }
         
         // Prepare the request body
