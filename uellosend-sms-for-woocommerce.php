@@ -2,7 +2,7 @@
 /*
  * Plugin Name:       UelloSend SMS for WooCommerce
  * Description:       Sends WooCommerce order and account related SMS notifications to customers and admin using UelloSend SMS Gateway, only Ghanaian numbers.
- * Version:           1.0.1
+ * Version:           1.0.0
  * Requires at least: 5.2
  * Requires PHP:      7.4
  * Author:            UviTech
